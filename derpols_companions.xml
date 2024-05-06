@@ -4,7 +4,7 @@
         <name>Companions</name>
         <description>Companion creatures from the Derpol's Library.</description>
         <update version="1.0">
-            <file name="derpols_companions.xml"/>
+            <file name="derpols_companions.xml" url="https://github.com/SirDerpol/derpols_library/blob/main/derpols_companions.xml" />
         </update>
     </info>
 
