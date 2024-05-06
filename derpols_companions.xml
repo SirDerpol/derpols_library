@@ -8,7 +8,7 @@
         </update>
     </info>
 
-    <element name="Max" type="Companion" source="Derpol's Library">
+    <element name="Max" type="Companion" source="Derpol's Library" id="ID_SD_DL_COMPANION_MAX">
         <description/>
         <setters>
             <set name="strength">12</set>
