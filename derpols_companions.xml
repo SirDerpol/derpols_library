@@ -4,7 +4,7 @@
         <name>Companions</name>
         <description>Companion creatures from the Derpol's Library.</description>
         <update version="1.0">
-            <file name="derpols_companions.xml" url="https://github.com/SirDerpol/derpols_library/blob/main/derpols_companions.xml" />
+            <file name="companions.xml" url="https://github.com/SirDerpol/derpols_library/blob/main/derpols_companions.xml"/>
         </update>
     </info>
 
@@ -12,29 +12,35 @@
         <description/>
         <setters>
             <set name="strength">12</set>
-            <set name="dexterity">15</set>
-            <set name="constitution">12</set>
-            <set name="intelligence">3</set>
-            <set name="wisdom">12</set>
-            <set name="charisma">6</set>
+            <set name="dexterity">14</set>
+            <set name="constitution">14</set>
+            <set name="intelligence">12</set>
+            <set name="wisdom">18</set>
+            <set name="charisma">7</set>
             <set name="ac">13 (natural armor)</set>
-            <set name="hp">11 (2d8+2)</set>
+            <set name="hp">29 (3d8+6)</set>
             <set name="speed">40 ft.</set>
-            <set name="languages">—</set>
-            <set name="skills">Perception +3, Stealth +4</set>
-            <set name="type">Beast</set>
+            <set name="senses">darkvision 60 ft., passive Perception 16</set>
+            <set name="languages">Sylvan</set>
+            <set name="skills">Perception +4 plus PB, Stealth +2 plus PB×2, Survival +4 plus PB</set>
+            <set name="saves">Dex +2 plus PB</set>
+            <set name="resistances">cold</set>
+            <set name="type">Beast, Fey</set>
             <set name="size">Medium</set>
-            <set name="alignment">unaligned</set>
-            <set name="challenge">1/4</set>
-            <set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_WOLF_KEEN_HEARING_AND_SMELL,ID_WOTC_PHB_COMPANION_TRAIT_WOLF_PACK_TACTICS</set>
-            <set name="actions">ID_WOTC_PHB_COMPANION_ACTION_WOLF_BITE</set>
+            <set name="alignment">Neutral Good</set>
+            <set name="challenge">Level 3</set>
+            <set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_WOLF_KEEN_HEARING_AND_SMELL,ID_WOTC_PHB_COMPANION_TRAIT_WOLF_PACK_TACTICS,ID_WOTC_TCOE_COMPANION_TRAIT_IMPROVED CRITICAL</set>
+            <set name="actions">ID_WOTC_PHB_COMPANION_ACTION_WOLF_BITE,ID_WOTC_TCOE_COMPANION_ACTION_SECOND_WIND</set>
         </setters>
         <rules>
             <stat name="companion:ac" value="13"/>
-            <stat name="companion:hp:max" value="11" bonus="base"/>
+            <stat name="companion:hp:max" value="29" bonus="base"/>
             <stat name="companion:speed" value="40" bonus="base"/>
-            <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base"/>
-            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base"/>
+            <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency"/>
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="proficiency"/>
+            <stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double"/>
+            <stat name="companion:survival:proficiency" value="companion:proficiency" bonus="proficiency"/>
+            <stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency"/>
         </rules>
     </element>
     <element name="Keen Hearing and Smell" type="Companion Trait" source="Player’s Handbook" id="ID_WOTC_PHB_COMPANION_TRAIT_WOLF_KEEN_HEARING_AND_SMELL">
@@ -53,12 +59,28 @@
             <description>The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 ft. of the creature and the ally isn't incapacitated.</description>
         </sheet>
     </element>
-    <element name="Bite" type="Companion Action" source="Player’s Handbook" id="ID_WOTC_PHB_COMPANION_ACTION_WOLF_BITE">
+    <element name="Improved Critical" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_IMPROVED CRITICAL">
         <description>
-            <p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.</p>
+            <p>The wolf's attack rolls score a critical hit on a roll of 19 or 20.</p>
         </description>
         <sheet>
-            <description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.</description>
+            <description>The wolf's attack rolls score a critical hit on a roll of 19 or 20.</description>
+        </sheet>
+    </element>
+    <element name="Bite" type="Companion Action" source="Player’s Handbook" id="ID_WOTC_PHB_COMPANION_ACTION_WOLF_BITE">
+        <description>
+            <p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.</p>
+        </description>
+        <sheet>
+            <description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.</description>
+        </sheet>
+    </element>
+    <element name="Second Wind" type="Companion Action" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_SECOND_WIND">
+        <description>
+            <p>The wolf can use a bonus action on its turn to regain hit points equal to 1d10 + its level in this class. Once it uses this feature, it must finish a short or long rest before it can use it again.</p>
+        </description>
+        <sheet>
+            <description>The wolf can use a bonus action on its turn to regain hit points equal to 1d10 + its level in this class. Once it uses this feature, it must finish a short or long rest before it can use it again.</description>
         </sheet>
     </element>
 </elements>
